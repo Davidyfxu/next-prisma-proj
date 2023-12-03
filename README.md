@@ -1,47 +1,42 @@
-<p align="center">
-  <a href="https://nextjs-postgres-auth.vercel.app/">
-    <img src="/public/logo.png" height="96">
-    <h3 align="center">Next.js Prisma PostgreSQL Auth Starter</h3>
-  </a>
-</p>
+# Next-Todolist
 
-<p align="center">
-This is a <a href="https://nextjs.org/">Next.js</a> starter kit that uses <a href="https://next-auth.js.org/">Next-Auth</a> for simple email + password login<br/>
-<a href="https://www.prisma.io/">Prisma</a> as the ORM, and a <a href="https://vercel.com/postgres">Vercel Postgres</a> database to persist the data.</p>
+欢迎使用 Next-Todolist，这是一个由 React、Next.js、Next-Auth 和 Vercel Postgres 构建的简单且安全的待办事项管理应用。这个项目可以帮助您高效地跟踪您的任务，确保您保持有条不紊，实现您的日常目标。
 
-<br/>
+## 入门指南
 
-## Deploy Your Own
+要开始使用 Next-Todolist，请按照以下简单步骤操作：
 
-You can clone & deploy it to Vercel with one click:
+1. 克隆存储库到您的本地计算机。
+2. 使用 `pnpm` 安装所需的依赖项。
+3. 在 Vercel 上创建一个 Postgres 数据库并配置您的环境变量。
+4. 使用 `pnpm dev` 在本地运行应用程序。
+5. 开始添加和管理您的待办事项！
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?demo-title=Next.js%20Prisma%20PostgreSQL%20Auth%20Starter&demo-description=Simple%20Next.js%2013%20starter%20kit%20that%20uses%20Next-Auth%20for%20auth%20and%20Prisma%20PostgreSQL%20as%20a%20database.&demo-url=https%3A%2F%2Fnextjs-postgres-auth.vercel.app%2F&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F7rsVQ1ZBSiWe9JGO6FUeZZ%2F210cba91036ca912b2770e0bd5d6cc5d%2Fthumbnail.png&project-name=Next.js%%20Prisma%20PostgreSQL%20Auth%20Starter&repository-name=nextjs-postgres-auth-starter&repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnextjs-postgres-auth-starter&from=templates&skippable-integrations=1&env=NEXTAUTH_SECRET&envDescription=Generate%20a%20random%20secret%3A&envLink=https://generate-secret.vercel.app/&stores=%5B%7B"type"%3A"postgres"%7D%5D)
+## 特点
 
-## Developing Locally
+- **用户认证**: TodoList 利用 Next-Auth 提供了简单且安全的电子邮件+密码登录功能。
+- **持久数据**: 利用 Vercel Postgres 安全地存储您的待办事项列表，确保您的数据随时可用。
 
-You can clone & create this repo with the following command
+## 使用的技术
 
-```bash
-npx create-next-app nextjs-typescript-starter --example "https://github.com/vercel/nextjs-postgres-auth-starter"
-```
+- [React](https://reactjs.org/): 用于构建用户界面的流行 JavaScript 库。
+- [Next.js](https://nextjs.org/): 用于构建服务器呈现的 React 应用程序的强大框架。
+- [Next-Auth](https://next-auth.js.org/): 用于 Next.js 应用程序的简单且灵活的认证库。
+- [Prisma](https://prisma.yoga/) 是一个现代化的数据库工具和 ORM（对象关系映射）库，
+- [Vercel Postgres](https://vercel.com/postgres): Vercel 提供的可靠且可扩展的托管数据库解决方案。
 
-## Getting Started
+## 部署
 
-First, run the development server:
+您可以通过点击一次即可在 Vercel 上部署 TodoList！只需点击下面的“部署到 Vercel”按钮即可开始：
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+[![部署到Vercel](https://vercel.com/button)](https://vercel.com/new/clone?demo-title=React%20Next.js%20TodoList&demo-description=简单的React%20Next.js%20TodoList%20项目仓库。&demo-url=https://react-nextjs-todolist.vercel.app/&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F7rsVQ1ZBSiWe9JGO6FUeZZ%2F210cba91036ca912b2770e0bd5d6cc5d%2Fthumbnail.png&project-name=React%20Next.js%20TodoList&repository-name=react-nextjs-todolist&repository-url=https%3A%2F%2Fgithub.com%2FAnsonZnl%2Freact-nextjs-todolist&from=templates&skippable-integrations=1&env=NEXTAUTH_SECRET&envDescription=生成一个随机密钥:&envLink=https://generate-secret.vercel.app/&stores=%5B%7B%22type%22%3A%22postgres%22%7D%5D&)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 参与贡献
 
-## Learn More
+我们欢迎社区的贡献。如果您遇到任何问题，有改进建议，或者想要贡献代码，请随时查看我们的 GitHub 仓库：
 
-To learn more about Next.js, take a look at the following resources:
+[GitHub 仓库](https://github.com/AnsonZnl/react-nextjs-todolist)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 许可证
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+TodoList 是开源的，根据 MIT 许可证分发。请随意使用、修改和与他人分享。
