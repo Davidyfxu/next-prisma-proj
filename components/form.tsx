@@ -6,13 +6,13 @@ import LoadingDots from "@/components/loading-dots";
 import toast from "react-hot-toast";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Iuser } from "types";
+import { IUser } from "types";
 
 export default function Form({ type }: { type: "login" | "register" }) {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   // 登录逻辑
-  const login = ({ email, password }: Iuser) => {
+  const login = ({ email, password }: IUser) => {
     signIn("credentials", {
       redirect: false,
       email,
@@ -29,7 +29,7 @@ export default function Form({ type }: { type: "login" | "register" }) {
     });
   };
   // 注册逻辑
-  const register = ({ email, password }: Iuser) => {
+  const register = ({ email, password }: IUser) => {
     fetch("/api/auth/register", {
       method: "POST",
       headers: {
@@ -58,15 +58,24 @@ export default function Form({ type }: { type: "login" | "register" }) {
         e.preventDefault();
         setLoading(true);
         if (type === "login") {
-          login({ email: e.currentTarget.email.value, password: e.currentTarget.password.value });
+          login({
+            email: e.currentTarget.email.value,
+            password: e.currentTarget.password.value,
+          });
         } else {
-          register({ email: e.currentTarget.email.value, password: e.currentTarget.password.value });
+          register({
+            email: e.currentTarget.email.value,
+            password: e.currentTarget.password.value,
+          });
         }
       }}
       className="flex flex-col space-y-4 bg-gray-50 px-4 py-8 sm:px-16"
     >
       <div>
-        <label htmlFor="email" className="block text-xs text-gray-600 uppercase">
+        <label
+          htmlFor="email"
+          className="block text-xs text-gray-600 uppercase"
+        >
           Email Address
         </label>
         <input
@@ -80,7 +89,10 @@ export default function Form({ type }: { type: "login" | "register" }) {
         />
       </div>
       <div>
-        <label htmlFor="password" className="block text-xs text-gray-600 uppercase">
+        <label
+          htmlFor="password"
+          className="block text-xs text-gray-600 uppercase"
+        >
           Password
         </label>
         <input
@@ -94,10 +106,16 @@ export default function Form({ type }: { type: "login" | "register" }) {
       <button
         disabled={loading}
         className={`${
-          loading ? "cursor-not-allowed border-gray-200 bg-gray-100" : "border-black bg-black text-white hover:bg-white hover:text-black"
+          loading
+            ? "cursor-not-allowed border-gray-200 bg-gray-100"
+            : "border-black bg-black text-white hover:bg-white hover:text-black"
         } flex h-10 w-full items-center justify-center rounded-md border text-sm transition-all focus:outline-none`}
       >
-        {loading ? <LoadingDots color="#808080" /> : <p>{type === "login" ? "Sign In" : "Sign Up"}</p>}
+        {loading ? (
+          <LoadingDots color="#808080" />
+        ) : (
+          <p>{type === "login" ? "Sign In" : "Sign Up"}</p>
+        )}
       </button>
       {type === "login" ? (
         <p className="text-center text-sm text-gray-600">

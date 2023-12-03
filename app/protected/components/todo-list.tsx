@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { TrashIcon } from "@heroicons/react/24/solid";
 import { SessionContextValue, useSession } from "next-auth/react";
 import { ItodoItem } from "types";
@@ -20,10 +20,12 @@ const TodoList = () => {
     const userId = session?.user?.id;
     if (userId) {
       setUserId(userId);
-      fetch(`/api/todo?userId=${userId}`, { method: "GET" }).then(async (res) => {
-        const todo = (await res.json()) as ItodoItem[];
-        setTodos(todo);
-      });
+      fetch(`/api/todo?userId=${userId}`, { method: "GET" }).then(
+        async (res) => {
+          const todo = (await res.json()) as ItodoItem[];
+          setTodos(todo);
+        },
+      );
     }
   }, [session]);
 
@@ -96,7 +98,10 @@ const TodoList = () => {
           placeholder="Add a new todo"
           className="border border-gray-300 rounded-lg px-4 py-2 mr-2 flex-grow text-gray-600"
         />
-        <button onClick={handleAddTodo} className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-center w-[80px]">
+        <button
+          onClick={handleAddTodo}
+          className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-center w-[80px]"
+        >
           {loading ? <LoadingDots color="#fff" /> : "Add"}
         </button>
       </div>
@@ -112,8 +117,19 @@ const TodoList = () => {
                   checkTodo(index, event.target.checked);
                 }}
               />
-              <span className={todo.complete ? "flex-grow px-1 text-gray-200 line-through" : "flex-grow px-1 text-gray-200"}>{todo.content}</span>
-              <button onClick={() => handleDeleteTodo(index)} className="text-red-500 hover:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500">
+              <span
+                className={
+                  todo.complete
+                    ? "flex-grow px-1 text-gray-200 line-through"
+                    : "flex-grow px-1 text-gray-200"
+                }
+              >
+                {todo.content}
+              </span>
+              <button
+                onClick={() => handleDeleteTodo(index)}
+                className="text-red-500 hover:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500"
+              >
                 <TrashIcon className="h-5 w-5" />
               </button>
             </li>

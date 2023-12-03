@@ -4,7 +4,7 @@ export interface ItodoItem {
   complete: boolean;
 }
 
-export interface Iuser {
+export interface IUser {
   id?: number;
   email: string;
   password: string;
