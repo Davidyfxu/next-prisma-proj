@@ -29,10 +29,6 @@ const TodoList = () => {
 
   const handleAddTodo = async () => {
     if (loading) return;
-    if (todos.length > 4) {
-      toast.error("The number of todos exceeds five");
-      return;
-    }
 
     if (inputValue.trim() !== "") {
       setLoading(true);

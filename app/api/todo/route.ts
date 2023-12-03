@@ -13,12 +13,6 @@ export async function GET(request: NextRequest) {
 // 添加todo
 export async function POST(req: Request) {
   const { content, userId } = await req.json();
-  const nums = await prisma.todoList.count({
-    where: { userId },
-  });
-  if (nums > 4) {
-    return NextResponse.json({ code: -100, msg: "The number of todos exceeds five" });
-  }
   const todo = await prisma.todoList.create({
     data: { content, userId },
   });
