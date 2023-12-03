@@ -7,9 +7,9 @@ import React, { Suspense } from "react";
 import { NextAuthProvider } from "./providers";
 
 
-const title = "Next Prisma Project";
+const title = "love-syy";
 const description =
-  "This is a Next Prisma Project";
+  "A website for SYY and XYF";
 
 export const metadata: Metadata = {
   title,
