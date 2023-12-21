@@ -22,7 +22,7 @@ function debounce(fn, ms) {
 }
 
 export const MerryChristmasText = (props) => {
-  const [matcapTexture] = useMatcapTexture("7B5254_E9DCC7_B19986_C8AC91", 256);
+  // const [matcapTexture] = useMatcapTexture("7B5254_E9DCC7_B19986_C8AC91", 256);
   const ref = useRef();
   const scroll = useScroll();
   const tl = useRef();
@@ -76,7 +76,6 @@ export const MerryChristmasText = (props) => {
             bevelSegments={5}
           >
             Merry Christmas
-            <meshMatcapMaterial matcap={matcapTexture} />
           </Text3D>
         </Float>
       </Center>
