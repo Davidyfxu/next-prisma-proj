@@ -13,14 +13,15 @@ const ImageUpload = () => {
       <CldUploadWidget
         uploadPreset="apll2bn6"
         onUpload={(results, widget) => {
-          console.log(results);
           if (results!.event !== "success") return;
-          const info = results?.info;
-          setPublicId(info?.public_id);
+          const public_id = results?.info?.public_id??"";
+          setPublicId(public_id);
         }}
       >
         {({ open }) => (
-          <Button color={"primary"} onClick={() => open()}>
+          <Button color={"primary"} onClick={() => {
+            typeof open==='function'&&open()}
+          }>
             Upload
           </Button>
         )}
