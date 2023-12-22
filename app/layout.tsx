@@ -2,14 +2,14 @@
 import "@/styles/globals.css";
 import { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
-import AuthStatus from "@/components/auth-status";
 import React, { Suspense } from "react";
-import { NextAuthProvider } from "./providers";
-
+import { NextProvider } from "./providers";
+import AuthStatus from "@/components/auth-status";
+import { Spinner } from "@nextui-org/react";
+import SignOut from "@/components/sign-out";
 
 const title = "love-syy";
-const description =
-  "A website for SYY and XYF";
+const description = "A website for SYY and XYF";
 
 export const metadata: Metadata = {
   title,
@@ -27,14 +27,14 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html>
       <link rel="icon" href="/favicon.ico" />
       <body>
-        <Toaster />
-        <Suspense fallback="Loading...">
+        <Suspense fallback={<Spinner color="primary" />}>
           <AuthStatus />
         </Suspense>
-        <NextAuthProvider>{children}</NextAuthProvider>
+        <Toaster />
+        <NextProvider>{children}</NextProvider>
       </body>
     </html>
   );

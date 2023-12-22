@@ -1,18 +1,19 @@
 import Image from "next/image";
 import Form from "@/components/form";
 import Link from "next/link";
+import { Card } from "@nextui-org/card";
 
 export default function Login() {
   return (
     <div className="flex h-screen w-screen items-center justify-center bg-gray-50">
-      <div className="z-10 w-full max-w-md overflow-hidden rounded-2xl border border-gray-100 shadow-xl">
+      <Card className="w-full max-w-md">
         <div className="flex flex-col items-center justify-center space-y-3 border-b border-gray-200 bg-white px-4 py-6 pt-8 text-center sm:px-16">
           <Link href="/">
             <Image
-              src="/logo.png"
+              src="/love.svg"
               priority
               alt="Logo"
-              className="h-10 w-10 rounded-full"
+              className="h-10 w-10"
               width={20}
               height={20}
             />
@@ -23,7 +24,7 @@ export default function Login() {
           </p>
         </div>
         <Form type="login" />
-      </div>
+      </Card>
     </div>
   );
 }

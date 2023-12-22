@@ -120,8 +120,8 @@ const TodoList = () => {
               <span
                 className={
                   todo.complete
-                    ? "flex-grow px-1 text-gray-200 line-through"
-                    : "flex-grow px-1 text-gray-200"
+                    ? "flex-grow px-1 line-through"
+                    : "flex-grow px-1"
                 }
               >
                 {todo.content}

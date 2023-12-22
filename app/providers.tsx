@@ -8,10 +8,10 @@ type Props = {
   children?: React.ReactNode;
 };
 
-export const NextAuthProvider = ({ children }: Props) => {
+export const NextProvider = ({ children }: Props) => {
   return (
-    <SessionProvider>
-      <NextUIProvider>{children}</NextUIProvider>
-    </SessionProvider>
+    <NextUIProvider>
+      <SessionProvider>{children}</SessionProvider>
+    </NextUIProvider>
   );
 };

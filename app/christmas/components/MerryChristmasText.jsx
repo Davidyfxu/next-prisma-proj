@@ -63,6 +63,7 @@ export const MerryChristmasText = (props) => {
     <group {...props}>
       <Center>
         <Float>
+          Merry Christmas
           <Text3D
             ref={ref}
             font={"/fonts/Mountains of Christmas_Bold.json"}
